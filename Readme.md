@@ -74,7 +74,7 @@ Before you fit the model, you need to make sure X here **must be a model matrix*
 To fit the FBKMR model, we use the `skmbayes` function which implements data sketching for scalability. 
 ```r
 set.seed(111)
-fitkm <- skmbayes(y = y, Z = Z, X = X, iter = 1000, n_subset=5, file_path = NULL,save_loc = FALSE, n.cores = 4)
+fitkm <- skmbayes(y = y, Z = Z, X = X, iter = 1000, n_subset=5, file_path = NULL,save_loc = FALSE,  linprog=FALSE,est.h=FALSE,n.cores = 4)
 ```
 Key parameters include:
 - `n_subset`: Number of data splits. You can choose the number of splits based on the cpu cores you have. If you work on a single core, the program will run sequentially over the splits. We recommend using 5 splits for a single core.
